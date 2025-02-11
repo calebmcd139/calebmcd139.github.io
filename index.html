@@ -83,8 +83,9 @@
         <img id="email-icon" src="email-icon.png" alt="Email Icon">
     </a>
 
-    <!-- PDF.js Script -->
+    <!-- PDF.js Script (from CDN) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
     <script>
         var pdfDoc = null;
         var currentPage = 1;
@@ -111,7 +112,7 @@
                     viewport: viewport
                 };
                 page.render(renderContext);
-        });
+            });
         }
 
         // Go to the next page
