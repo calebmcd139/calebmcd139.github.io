@@ -58,10 +58,10 @@
 <body>
 
     <!-- Header Image -->
-    <img id="header-image" src="headerimage.jpg" alt="Header Image">
+    <img id="header-image" src="header-image.jpg" alt="Header Image">
 
     <!-- Second Image -->
-    <img id="center-image" src="centerimage.jpg" alt="Center Image">
+    <img id="center-image" src="center-image.jpg" alt="Center Image">
 
     <!-- PDF Viewer with Controls -->
     <div id="pdf-viewer-container">
@@ -95,7 +95,7 @@
         var ctx = canvas.getContext('2d');
 
         // Load PDF document
-        pdfjsLib.getDocument('pdfs/my-pdf-file.pdf').promise.then(function(pdf) { // Adjust the path as needed
+        pdfjsLib.getDocument('pdfs/Who-Stole-Baby-Jesus-Episode-One-Screenplay.pdf').promise.then(function(pdf) { // Updated file name and path
             pdfDoc = pdf;
             totalPages = pdf.numPages;
             renderPage(currentPage);
