@@ -39,16 +39,13 @@
             transform: translateY(-50%);
         }
         .button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
+            background-color: transparent;
             border: none;
-            border-radius: 5px;
+            cursor: pointer;
         }
-        .button:hover {
-            background-color: #45a049;
+        .button img {
+            width: 50px; /* Set the size of the icons */
+            height: 50px;
         }
         #email-icon {
             width: 50px;
@@ -61,17 +58,21 @@
 <body>
 
     <!-- Header Image -->
-    <img id="header-image" src="headerimage.jpg" alt="Header Image">
+    <img id="header-image" src="header-image.jpg" alt="Header Image">
 
     <!-- Second Image -->
-    <img id="center-image" src="centerimage.jpg" alt="Center Image">
+    <img id="center-image" src="center-image.jpg" alt="Center Image">
 
     <!-- PDF Viewer with Controls -->
     <div id="pdf-viewer-container">
         <canvas id="pdf-canvas"></canvas>
         <div id="pdf-controls">
-            <button class="button" onclick="prevPage()">&#8592; Prev</button>
-            <button class="button" onclick="nextPage()">Next &#8594;</button>
+            <button class="button" onclick="prevPage()">
+                <img src="prev-icon.png" alt="Previous">
+            </button>
+            <button class="button" onclick="nextPage()">
+                <img src="next-icon.png" alt="Next">
+            </button>
         </div>
     </div>
 
@@ -94,7 +95,7 @@
         var ctx = canvas.getContext('2d');
 
         // Load PDF document
-        pdfjsLib.getDocument('sample.pdf').promise.then(function(pdf) {
+        pdfjsLib.getDocument('pdfs/my-pdf-file.pdf').promise.then(function(pdf) { // Adjust the path as needed
             pdfDoc = pdf;
             totalPages = pdf.numPages;
             renderPage(currentPage);
